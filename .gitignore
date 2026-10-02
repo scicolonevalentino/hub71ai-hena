@@ -1,0 +1,6 @@
+.DS_Store
+.vercel/
+MVP/.env.local
+node_modules/
+.vercel
+.env*

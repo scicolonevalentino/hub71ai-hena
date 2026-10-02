@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b3c">
+  <title>Hena Abu Dhabi — Your first 30 days, one clear next step</title>
+  <meta name="description" content="New to Abu Dhabi? Ask Hena by voice or text for one practical next step, an official source, and progress you can save on this device.">
+  <style>
+    :root { color-scheme: light; --ink:#082b3c; --muted:#365260; --sea:#087e91; --aqua:#54ced0; --coral:#e66d65; --paper:#f7faf8; --line:#b7c9ca; --focus:#b83b27; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(circle at 50% -12%,#d5f5f2 0,transparent 40%),var(--paper); color:var(--ink); font:1rem/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    button, textarea { font:inherit; }
+    button { cursor:pointer; }
+    a { color:#075d77; text-underline-offset:.18em; }
+    a:hover { color:#003b50; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
+    .skip { position:absolute; top:-5rem; left:1rem; z-index:10; padding:.7rem 1rem; background:#fff; color:var(--ink); border:2px solid var(--ink); }
+    .skip:focus { top:1rem; }
+    .shell { width:min(100% - 2rem,760px); margin:0 auto; }
+    .topline { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.15rem 0; border-bottom:1px solid var(--line); }
+    .brand { font-weight:850; letter-spacing:-.07em; font-size:1.7rem; line-height:1; }
+    .brand span { color:var(--sea); }
+    .dashboard-link { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.45rem .8rem; border:1.5px solid var(--line); border-radius:999px; background:#fff; color:var(--ink); font-size:.83rem; font-weight:800; text-decoration:none; text-align:center; }
+    .dashboard-link:hover { border-color:var(--ink); background:#e9f4f1; }
+    main { padding-bottom:4rem; }
+    .hero { text-align:center; padding:1rem 0 1.4rem; }
+    .hero .eyebrow { display:inline-block; padding:.35rem .8rem; border:1.5px solid #65aeb2; border-radius:999px; background:#e0f4f1; color:var(--ink); font-size:.84rem; letter-spacing:.01em; text-transform:none; }
+    h1 { font-size:clamp(2.6rem,6.2vw,3.7rem); line-height:1.02; letter-spacing:-.07em; margin:.45rem 0 .55rem; }
+    h1 span { color:var(--sea); }
+    .lead { font-size:clamp(1.1rem,3vw,1.35rem); margin:.1rem auto .5rem; max-width:34rem; }
+    .scope { color:var(--muted); font-size:.9rem; margin:.5rem auto 0; max-width:35rem; }
+    .ripple-wrap { display:grid; place-items:center; height:105px; margin:.3rem auto 0; }
+    .ripple { width:100px; height:100px; filter:drop-shadow(0 12px 28px rgba(3,122,151,.24)); overflow:visible; }
+    .ripple .arc-a { transform-origin:100px 100px; animation:float-a 8s ease-in-out infinite alternate; }
+    .ripple .arc-b { transform-origin:100px 100px; animation:float-b 10s ease-in-out infinite alternate; }
+    .ripple .arc-c { transform-origin:100px 100px; animation:float-a 12s ease-in-out infinite alternate-reverse; }
+    body[data-voice="listening"] .ripple .arc-a { animation-duration:2.8s; }
+    body[data-voice="thinking"] .ripple .arc-b { animation-duration:3.6s; }
+    body[data-voice="speaking"] .ripple { animation:pulse 1.5s ease-in-out infinite; }
+    @keyframes float-a { from { transform:rotate(-7deg) scale(.97); } to { transform:rotate(9deg) scale(1.035); } }
+    @keyframes float-b { from { transform:rotate(8deg) translateY(-2px); } to { transform:rotate(-10deg) translateY(3px); } }
+    @keyframes pulse { 50% { transform:scale(1.045); filter:drop-shadow(0 12px 33px rgba(3,122,151,.4)); } }
+    .voice-label { color:var(--muted); font-size:.86rem; font-weight:750; min-height:1.4em; margin:.2rem 0 0; }
+    .hero-voice { display:block; width:min(100%,22rem); margin:.5rem auto .3rem; min-height:62px; padding:.8rem 1.5rem; border:2px solid var(--ink); border-radius:999px; background:var(--ink); color:#fff; font-size:1.16rem; font-weight:800; box-shadow:0 11px 24px rgba(8,43,60,.2); cursor:pointer; }
+    .hero-voice:hover { background:#0b5265; transform:translateY(-2px); }
+    .hero-voice:active { transform:translateY(0); }
+    .voice-hint { color:var(--muted); font-size:.9rem; margin:.25rem 0 .4rem; }
+    .proof-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.55rem; list-style:none; padding:0; margin:1.2rem 0 1rem; text-align:left; }
+    .proof-steps li { display:flex; align-items:center; gap:.55rem; min-height:64px; padding:.65rem .75rem; border:1px solid var(--line); border-radius:.8rem; background:#fff; font-size:.84rem; font-weight:750; line-height:1.3; }
+    .proof-steps li:nth-child(2) { background:#e0f4f1; border-color:#65aeb2; }
+    .proof-steps strong { flex:none; display:grid; place-items:center; width:1.9rem; height:1.9rem; border-radius:50%; background:var(--ink); color:#fff; font-size:.76rem; }
+    .ask { background:#fff; border:1px solid var(--line); border-radius:1.5rem; padding:clamp(1rem,4vw,1.8rem); box-shadow:0 16px 40px rgba(7,50,64,.07); }
+    .ask label { font-size:1.18rem; font-weight:800; letter-spacing:-.025em; display:block; }
+    .hint { color:var(--muted); margin:.2rem 0 .8rem; font-size:.9rem; }
+    textarea { width:100%; min-height:110px; resize:vertical; padding:.9rem 1rem; color:var(--ink); background:#f9fbfa; border:1.5px solid #728e95; border-radius:.85rem; }
+    textarea::placeholder { color:#556e77; opacity:1; }
+    .actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:.85rem; }
+    .primary,.secondary,.quiet,.area { border-radius:999px; min-height:44px; padding:.55rem 1.1rem; font-weight:750; }
+    .primary { background:var(--ink); border:2px solid var(--ink); color:#fff; }
+    .primary:hover { background:#0b5265; }
+    .secondary { color:var(--ink); background:#e0f4f1; border:2px solid #2f8e95; }
+    .secondary:hover { background:#c7ebe8; }
+    .quiet { color:var(--ink); background:#fff; border:2px solid var(--line); }
+    .quiet:hover { border-color:var(--ink); }
+    .message { margin:.65rem 0 0; color:#9b3025; font-weight:700; }
+    .message[data-kind="success"] { color:#075d67; }
+    .message:empty { display:none; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .areas { margin:2.2rem 0 0; }
+    h2 { font-size:1.5rem; line-height:1.15; letter-spacing:-.04em; margin:0 0 .6rem; }
+    .section-intro { color:var(--muted); margin:.2rem 0 1rem; }
+    .area-list { display:flex; flex-wrap:wrap; gap:.55rem; }
+    .area { background:#fff; color:var(--ink); border:1.5px solid var(--line); }
+    .area[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+    .experience-picker { margin:1rem 0 1.35rem; }
+    .experience-picker h3 { font-size:1.1rem; margin:0 0 .3rem; }
+    .experience-picker p { color:var(--muted); margin:.2rem 0 .75rem; }
+    .category-list { display:flex; flex-wrap:wrap; gap:.5rem; margin:.65rem 0 1rem; }
+    .category { min-height:44px; padding:.55rem .85rem; border:1.5px solid var(--line); border-radius:999px; background:#fff; color:var(--ink); font-weight:750; }
+    .category[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+    .experience-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+    .experience { min-height:58px; padding:.7rem .9rem; border:2px solid var(--line); border-radius:1rem; background:#fff; color:var(--ink); text-align:left; font-weight:750; }
+    .experience:hover { border-color:var(--sea); background:#f0faf8; }
+    .experience[aria-pressed="true"] { border-color:var(--ink); background:#e0f4f1; box-shadow:inset 5px 0 0 var(--sea); }
+    .result { margin-top:2.2rem; border-top:2px solid var(--ink); padding-top:1.4rem; }
+    .result[hidden],.voice-panel[hidden] { display:none; }
+    .eyebrow { color:#00677a; text-transform:uppercase; font-size:.74rem; font-weight:850; letter-spacing:.14em; margin:0 0 .4rem; }
+    .next-head { font-size:clamp(1.65rem,4vw,2.2rem); line-height:1.12; letter-spacing:-.045em; margin:.7rem 0; }
+    .experience-name { font-size:1.25rem; margin:.9rem 0; }
+    .limits { color:var(--muted); background:#e9f4f1; border-left:4px solid var(--sea); padding:.8rem 1rem; margin:1rem 0; border-radius:0 .5rem .5rem 0; }
+    .access-perspective { background:#e0f4f1; border:1.5px solid #65aeb2; border-radius:.85rem; padding:.85rem 1rem; margin:1rem 0; }
+    .access-perspective h3 { font-size:1rem; margin:0 0 .25rem; }
+    .access-perspective p { margin:0; }
+    .ai-answer { margin:1.2rem 0; }
+    .ai-answer h3 { font-size:1rem; margin:0 0 .25rem; }
+    .ai-answer p { white-space:pre-line; margin:.1rem 0; }
+    .source { margin:1.25rem 0 1rem; padding-top:.85rem; border-top:1px solid var(--line); }
+    .source strong { display:block; }
+    .source small { display:block; color:var(--muted); margin:.35rem 0; }
+    .handoff { margin:1rem 0; padding:.8rem 1rem; border:2px solid var(--sea); border-radius:.85rem; background:#f0faf8; }
+    .handoff summary { min-height:44px; padding:.5rem 0; font-size:1.1rem; font-weight:850; cursor:pointer; }
+    .handoff p { margin:.45rem 0; }
+    .handoff .actions { margin-top:.6rem; }
+    .handoff .call-link { display:inline-block; min-height:44px; padding:.65rem .9rem; border-radius:.65rem; background:var(--ink); color:#fff; font-weight:800; }
+    .handoff-status { min-height:1.4em; color:#075d67; font-weight:700; }
+    .completion { margin-top:1.2rem; display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+    .done { font-weight:750; color:#075d67; }
+    .voice-panel { margin-top:1.1rem; background:#e9f4f1; border:1px solid #8db8bc; border-radius:1rem; padding:1rem 1.2rem; }
+    .voice-panel h2 { font-size:1.15rem; }
+    .voice-panel p { margin:.25rem 0 .7rem; }
+    .transcript { margin-top:1rem; padding:0; list-style:none; }
+    .transcript li { margin:.5rem 0; background:#fff; padding:.7rem .9rem; border-radius:.7rem; }
+    .transcript strong { display:block; font-size:.82rem; color:var(--sea); text-transform:uppercase; letter-spacing:.08em; }
+    .footer { border-top:1px solid var(--line); color:var(--muted); padding:1.4rem 0 2rem; font-size:.83rem; }
+    @media (max-width:500px) { .experience-list { grid-template-columns:1fr; } .category { flex:1 0 44%; } .proof-steps { grid-template-columns:1fr; } .proof-steps li { min-height:48px; } }
+    @media (max-width:400px) { .shell { width:min(100% - 1.2rem,760px); } .ripple-wrap { height:90px; } .ripple { width:86px; height:86px; } .area { flex:1 0 44%; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; } }
+  </style>
+</head>
+<body data-voice="off">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="shell">
+    <header class="topline"><div class="brand" aria-label="Hena Abu Dhabi">hen<span>a</span>.</div><a class="dashboard-link" href="https://hub71ai-hena.vercel.app/government">Insights dashboard</a></header>
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="title">
+        <p class="eyebrow">For blind and low-vision newcomers to Abu Dhabi</p>
+        <h1 id="title">You're here.<br><span>Let's make Abu Dhabi yours.</span></h1>
+        <p class="lead">Your first 30 days, one clear next step.</p>
+        <div class="ripple-wrap" aria-hidden="true">
+          <svg class="ripple" viewBox="0 0 200 200" role="presentation" focusable="false">
+            <defs><linearGradient id="sea" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0f5b9b"/><stop offset=".5" stop-color="#49c7d1"/><stop offset="1" stop-color="#e66d65"/></linearGradient><linearGradient id="foam" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#0b6fa1"/><stop offset="1" stop-color="#8ae4db"/></linearGradient></defs>
+            <path class="arc-a" d="M39 80 C47 40 84 19 120 35 C154 47 173 72 162 105" fill="none" stroke="url(#sea)" stroke-width="23" stroke-linecap="round" opacity=".86"/>
+            <path class="arc-b" d="M157 132 C139 171 91 181 59 154 C33 133 28 107 43 88" fill="none" stroke="url(#foam)" stroke-width="20" stroke-linecap="round" opacity=".83"/>
+            <path class="arc-c" d="M70 121 C81 138 111 142 127 124" fill="none" stroke="url(#sea)" stroke-width="11" stroke-linecap="round" opacity=".56"/>
+          </svg>
+        </div>
+        <button class="hero-voice" id="voice-toggle" type="button" aria-expanded="false" aria-controls="voice-panel">Talk to Hena</button>
+        <p class="voice-hint">Using a screen reader? Type or dictate in the question field below and let it read Hena's answer. Talk to Hena starts a separate spoken conversation.</p>
+        <p class="voice-label" id="voice-state" aria-live="polite">Voice is off</p>
+        <ol class="proof-steps" aria-label="How Hena helps"><li><strong>1</strong><span>Ask by voice or text</span></li><li><strong>2</strong><span>Get a step with access in mind</span></li><li><strong>3</strong><span>Reach a verified contact</span></li></ol>
+        <p class="scope">Explore documents, home, transport, and things to do. Every step has an official source and a contact. Your progress stays on this device.</p>
+        <p class="scope">Hena is an independent guide. Check official sources before you act.</p>
+      </section>
+
+      <section class="ask" aria-labelledby="ask-title">
+        <label id="ask-title" for="question">What do you need help with?</label>
+        <p class="hint" id="question-hint">For example: I arrived yesterday. My employer is handling my visa. What should I do next? Please don't include ID or passport numbers.</p>
+        <textarea id="question" aria-describedby="question-hint" placeholder="Type your question here"></textarea>
+        <p class="message" id="question-error" role="status"></p>
+        <div class="actions"><button class="primary" id="ask-button" type="button">Get next step</button></div>
+        <div class="voice-panel" id="voice-panel" hidden>
+          <h2>Speak your question</h2>
+          <p>Voice is optional. Starting it opens a live spoken conversation, and Hena may reply aloud while it is active. If your screen reader is speaking, the two voices may overlap. You can stop Hena at any time or use the text box above to hear the answer through your screen reader.</p>
+          <div class="actions"><button class="quiet" id="voice-close" type="button">Close voice controls</button></div>
+          <p class="message" id="voice-error" role="alert"></p>
+          <p class="message" id="voice-result" data-kind="success" role="status"></p>
+          <ol class="transcript" id="transcript" aria-label="Conversation transcript"></ol>
+        </div>
+      </section>
+
+      <nav class="areas" aria-labelledby="areas-title"><h2 id="areas-title">Explore an area</h2><p class="section-intro">Choose another area at any time. Your progress stays here.</p><div class="area-list" id="area-list"></div></nav>
+      <section class="result" id="result" aria-labelledby="result-heading" hidden></section>
+    </main>
+    <footer class="footer">Independent guide · Verified sources · Progress saved on this device</footer>
+  </div>
+  <script type="module">
+    const byId = id => document.getElementById(id);
+    const state = { data:null, selected:null, step:null, completed:new Set(), voice:null, voiceAttempt:0, lastTranscript:'', pendingVoiceResult:'', queryId:0 };
+    const storageKey = 'hena-completed-v1';
+    const areaNames = { documents_residency:'Documents', housing:'Home', arrival_transport:'Transport', first_outing:'Things to do' };
+    const areaOrder = ['documents_residency','housing','arrival_transport','first_outing'];
+    try { state.completed = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]')); } catch { state.completed = new Set(); }
+
+    function setVoiceState(name, label) { document.body.dataset.voice=name; byId('voice-state').textContent=label; }
+    function setStatus(message, kind='error') { const status=byId('question-error'); status.textContent=message; status.dataset.kind=kind; }
+    function pulse(pattern) { try { navigator.vibrate?.(pattern); } catch {} }
+    function selectArea(id, focus=true, stepId=null) {
+      state.selected=id;
+      for(const button of byId('area-list').querySelectorAll('button')) button.setAttribute('aria-pressed',String(button.dataset.area===id));
+      const journey=state.data.journeys.find(item=>item.id===id);
+      const step=journey.steps.find(item=>item.id===stepId) || journey.steps.find(item=>!state.completed.has(item.id)) || journey.steps[0];
+      showStep(journey,step,focus);
+    }
+    function stepFromAnswer(answer) {
+      const words=text=>new Set((text.toLowerCase().match(/[a-z]{2,}/g) || []));
+      const answerWords=words(answer.replace(/https?:\/\/\S+/g,''));
+      const candidates=[];
+      for(const journey of state.data?.journeys || []) for(const step of journey.steps) {
+        const titleWords=words(step.source.title);
+        const titleMatch=[...titleWords].filter(word=>answerWords.has(word)).length/titleWords.size>=.8;
+        if(answer.includes(step.source.url) || titleMatch) candidates.push({journey,step});
+      }
+      if(candidates.length<2) return candidates[0] || null;
+      return candidates.map(candidate=>{
+        const stepWords=words(candidate.step.instruction+' '+candidate.step.limits);
+        const overlap=[...stepWords].filter(word=>answerWords.has(word)).length;
+        return {...candidate,score:overlap/Math.sqrt(stepWords.size)};
+      }).sort((a,b)=>b.score-a.score)[0];
+    }
+    function clear(el) { while(el.firstChild) el.removeChild(el.firstChild); }
+    function node(tag,text,className) { const el=document.createElement(tag); el.textContent=text; if(className) el.className=className; return el; }
+    function showUnknown(detail='') {
+      state.selected=null; state.step=null;
+      for(const button of byId('area-list').querySelectorAll('button')) button.setAttribute('aria-pressed','false');
+      const result=byId('result'); clear(result); result.hidden=false;
+      const heading=node('h2',"I don't know from the sources I have."); heading.id='result-heading'; heading.tabIndex=-1; result.append(heading);
+      if(detail) {
+        result.append(node('p',detail.replace(/^i don.t know from the sources i have\.\s*/i,'')));
+        const match=stepFromAnswer(detail);
+        if(match && (detail.includes(match.step.source.url) || detail.includes(match.step.source.title))) { const link=node('a','Open official source: '+match.step.source.title); link.href=match.step.source.url; result.append(link); }
+      }
+      result.append(node('p','Try a question about documents, home, transport, or things to do. For a personal decision, check the official source or ask the relevant provider.'));
+      heading.focus();
+    }
+    function showLoading() {
+      state.selected=null; state.step=null;
+      for(const button of byId('area-list').querySelectorAll('button')) button.setAttribute('aria-pressed','false');
+      const result=byId('result'); clear(result); result.hidden=false;
+      const heading=node('h2','Finding your next step…'); heading.id='result-heading'; heading.tabIndex=-1; result.append(heading); heading.focus();
+    }
+    function showStep(journey,step,focus=true) {
+      state.step=step;
+      const result=byId('result'); clear(result); result.hidden=false;
+      result.append(node('p',areaNames[journey.id],'eyebrow'));
+      const heading=node('h2','Your next step'); heading.id='result-heading'; heading.tabIndex=-1; result.append(heading);
+      if(journey.id==='first_outing') {
+        const picker=node('div','','experience-picker');
+        picker.append(node('h3','Choose an experience'));
+        const saved=journey.steps.filter(option=>state.completed.has(option.id)).length;
+        picker.append(node('p',`${journey.steps.length} ideas through sound, stories, taste, making, and places to explore. ${saved} saved here. Choose a mood, then an experience. Confirm the support you need with each venue.`));
+        const categories=[...new Set(journey.steps.map(option=>option.category))];
+        const filters=node('div','','category-list'); filters.setAttribute('aria-label','Experience moods');
+        for(const category of categories) {
+          const filter=node('button',category,'category'); filter.type='button';
+          filter.setAttribute('aria-pressed',String(category===step.category));
+          filter.addEventListener('click',()=>{
+            const first=journey.steps.find(option=>option.category===category && !state.completed.has(option.id)) || journey.steps.find(option=>option.category===category);
+            selectArea(journey.id,false,first.id);
+            const action=byId('result').querySelector('.next-head'); action.tabIndex=-1; action.focus();
+          }); filters.append(filter);
+        }
+        picker.append(filters);
+        const list=node('div','','experience-list');
+        for(const option of journey.steps.filter(item=>item.category===step.category)) {
+          const choice=node('button',option.experience_label+(state.completed.has(option.id)?' · Done':''),'experience'); choice.type='button';
+          choice.setAttribute('aria-pressed',String(option.id===step.id));
+          choice.addEventListener('click',()=>{ selectArea(journey.id,false,option.id); const action=byId('result').querySelector('.next-head'); action.tabIndex=-1; action.focus(); }); list.append(choice);
+        }
+        picker.append(list); result.append(picker);
+      }
+      if(step.experience_label) result.append(node('h3',step.experience_label,'experience-name'));
+      if(step.access_perspective) {
+        const perspective=node('div','','access-perspective');
+        perspective.append(node('h3','Without relying on sight'),node('p',step.access_perspective));
+        result.append(perspective);
+      }
+      result.append(node('p','What to do now','eyebrow'));
+      result.append(node('h3',step.instruction,'next-head'));
+      result.append(node('p',step.limits,'limits'));
+      const source=node('div','','source'); source.append(node('strong','Official source: '+step.source.title));
+      const link=node('a','Open official source: '+step.source.title); link.href=step.source.url; source.append(link);
+      source.append(node('small','Source checked: '+new Date(step.verified_at+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}))); result.append(source);
+      if(journey.handoff) {
+        const handoff=journey.handoff;
+        const disclosure=node('details','','handoff');
+        disclosure.open=true;
+        disclosure.append(node('summary','Contact the service for this step'));
+        disclosure.append(node('p',handoff.provider));
+        disclosure.append(node('p',handoff.scope));
+        if(handoff.phone_uri && handoff.phone_display) {
+          const phone=node('a','Call '+handoff.provider+': '+handoff.phone_display,'call-link'); phone.href=handoff.phone_uri;
+          phone.setAttribute('aria-label','Call '+handoff.provider+': '+handoff.phone_display);
+          const phoneLine=node('p',''); phoneLine.append(phone); disclosure.append(phoneLine);
+          disclosure.append(node('p','If Hena is speaking, stop the voice conversation before you call.'));
+        }
+        if(handoff.contact_url && handoff.contact_label) {
+          const contact=node('a',handoff.contact_label); contact.href=handoff.contact_url;
+          const contactLine=node('p',''); contactLine.append(node('strong','Official contact: '),contact); disclosure.append(contactLine);
+        }
+        if(handoff.question) {
+          const handoffQuestion=handoff.question.replace(/\{experience\}/g,step.experience_label || step.instruction).replace(/\{source\}/g,step.source.title);
+          disclosure.append(node('h3','What to ask'));
+          const prompt=node('p',handoffQuestion); disclosure.append(prompt);
+          const copyButton=node('button','Copy question','quiet'); copyButton.type='button';
+          const copyStatus=node('p','','handoff-status'); copyStatus.setAttribute('role','status');
+          let fallbackField=null;
+          copyButton.addEventListener('click',async()=>{
+            copyStatus.textContent='';
+            try {
+              if(navigator.clipboard?.writeText) await navigator.clipboard.writeText(handoffQuestion);
+              else throw new Error('Clipboard unavailable');
+              copyStatus.textContent='Question copied. Read it aloud, or paste it into an email or message.';
+            } catch {
+              if(!fallbackField) {
+                fallbackField=document.createElement('textarea'); fallbackField.readOnly=true;
+                fallbackField.setAttribute('aria-label','Question to copy'); fallbackField.value=handoffQuestion;
+                fallbackField.style.width='100%'; fallbackField.style.minHeight='5rem'; fallbackField.style.marginTop='.5rem';
+                disclosure.insertBefore(fallbackField,copyStatus);
+              }
+              fallbackField.focus(); fallbackField.select();
+              copyStatus.textContent='Copy is unavailable. The question is selected; use your copy command.';
+            }
+          });
+          const controls=node('div','','actions'); controls.append(copyButton); disclosure.append(controls,copyStatus);
+        }
+        result.append(disclosure);
+      }
+      const completion=node('div','','completion'); const done=state.completed.has(step.id);
+      completion.append(node('span',done?'Done: '+(step.experience_label || step.instruction):'Not yet marked done','done'));
+      const button=node('button',done?'Mark as not done':'Mark this step done','secondary'); button.type='button';
+      button.addEventListener('click',()=>toggleDone(step.id,journey.id)); completion.append(button); result.append(completion);
+      const next=journey.steps.find(item=>!state.completed.has(item.id) && item.id!==step.id);
+      if(done && next && journey.id!=='first_outing') { const continueButton=node('button','Continue to next step','quiet'); continueButton.type='button'; continueButton.addEventListener('click',()=>showStep(journey,next)); result.append(continueButton); }
+      if(focus) heading.focus();
+    }
+    function toggleDone(id,area) {
+      const wasDone=state.completed.has(id); if(wasDone) state.completed.delete(id); else state.completed.add(id);
+      try { localStorage.setItem(storageKey,JSON.stringify([...state.completed])); }
+      catch { if(wasDone) state.completed.add(id); else state.completed.delete(id); setStatus('This step could not be saved on this device.'); return; }
+      if(!wasDone) pulse([35,60,35]);
+      setStatus(wasDone?'Step marked as not done.':'Step saved on this device.','success');
+      const journey=state.data.journeys.find(item=>item.id===area);
+      const step=journey.steps.find(item=>item.id===id);
+      showStep(journey,step,false);
+      byId('result').querySelector('.completion button')?.focus();
+    }
+    async function submitQuestion() {
+      const question=byId('question'); const text=question.value.trim();
+      if(!text) { setStatus('Enter a question to get a next step.'); question.setAttribute('aria-invalid','true'); question.setAttribute('aria-describedby','question-hint question-error'); question.focus(); return; }
+      if(!state.data) {
+        setStatus('Loading Hena’s guide…','success');
+        await contentReady;
+        if(!state.data) { setStatus("I couldn't load the guide right now. Try refreshing the page."); return; }
+      }
+      question.removeAttribute('aria-invalid'); question.setAttribute('aria-describedby','question-hint'); setStatus('');
+      const queryId=++state.queryId;
+      showLoading();
+      try {
+        const response=await fetch('/api/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text})});
+        if(!response.ok) throw new Error('answer');
+        const data=await response.json();
+        if(state.queryId!==queryId || state.selected!==null) return;
+        const answer=(data.answer || '').trim();
+        const match=stepFromAnswer(answer);
+        if(/^i (?:don.t|do not) know\b/i.test(answer) || !answer) { showUnknown(answer); return; }
+        if(match) selectArea(match.journey.id,true,match.step.id);
+        else if(/over 20 curated ideas|22 (?:ideas|experiences)/i.test(answer)) selectArea('first_outing',true);
+        else { showUnknown(answer); return; }
+        const box=node('div','','ai-answer'); box.append(node('h3',"Hena's answer"),node('p',answer));
+        const result=byId('result'); result.insertBefore(box,result.querySelector('.source'));
+      } catch {
+        if(state.queryId===queryId && state.selected===null) {
+          const result=byId('result'); clear(result);
+          const heading=node('h2',"I couldn't get a next step right now."); heading.id='result-heading'; heading.tabIndex=-1;
+          result.append(heading,node('p','Try again, or choose an area below. Your question is still here.')); heading.focus();
+        }
+      }
+    }
+    async function load() {
+      try {
+        const response=await fetch('/api/content'); if(!response.ok) throw new Error('content'); state.data=await response.json();
+        const currentIds=new Set(state.data.journeys.flatMap(journey=>journey.steps.map(step=>step.id)));
+        state.completed=new Set([...state.completed].filter(id=>currentIds.has(id)));
+        for(const id of areaOrder) { const button=node('button',areaNames[id],'area'); button.type='button'; button.dataset.area=id; button.setAttribute('aria-pressed','false'); button.addEventListener('click',()=>selectArea(id)); byId('area-list').append(button); }
+        const count=state.completed.size; if(count) { const welcome=node('p',`Welcome back. ${count} ${count===1?'step':'steps'} saved on this device.`,'scope'); byId('title').after(welcome); }
+      } catch { setStatus("I couldn't load the guide right now. Try refreshing the page."); }
+    }
+    byId('ask-button').addEventListener('click',submitQuestion);
+    byId('question').addEventListener('input',()=>{ if(byId('question-error').textContent) setStatus(''); });
+    byId('voice-toggle').addEventListener('click',async()=>{
+      const panel=byId('voice-panel'); panel.hidden=false; byId('voice-toggle').setAttribute('aria-expanded','true');
+      if(state.voice) await stopVoice(); else { pulse(45); await startVoice(); }
+    });
+    byId('voice-close').addEventListener('click',async()=>{ await stopVoice(); byId('voice-panel').hidden=true; byId('voice-toggle').setAttribute('aria-expanded','false'); byId('voice-toggle').focus(); });
+    function appendTranscript(source,message) {
+      if(!message || state.lastTranscript===source+message) return;
+      state.lastTranscript=source+message;
+      const item=node('li',''); item.append(node('strong',source==='user'?'You':'Hena')); item.append(node('span',message)); byId('transcript').append(item);
+      if(source==='user') {
+        byId('question').value=message;
+        byId('voice-result').textContent='';
+      } else if(state.data) {
+        const match=stepFromAnswer(message);
+        if(match) { selectArea(match.journey.id,false,match.step.id); state.pendingVoiceResult='The official source and save button are below.'; }
+        else if(/over 20 curated ideas|22 (?:ideas|experiences)/i.test(message)) { selectArea('first_outing',false); state.pendingVoiceResult='Hena’s ideas are below. Choose a mood or an experience.'; }
+      }
+    }
+    async function startVoice() {
+      const attempt=++state.voiceAttempt;
+      byId('voice-error').textContent=''; byId('voice-result').textContent=''; state.pendingVoiceResult=''; byId('voice-toggle').disabled=true; setVoiceState('thinking','Connecting voice…');
+      try {
+        const response=await fetch('/api/signed-url'); if(!response.ok) throw new Error('Voice is unavailable right now. You can type your question.');
+        if(attempt!==state.voiceAttempt) return;
+        const {signedUrl}=await response.json();
+        const {Conversation}=await import('https://esm.sh/@elevenlabs/client@1.26.0');
+        if(attempt!==state.voiceAttempt) return;
+        let activeSession=null;
+        let muteWhileSpeaking=false;
+        const session=await Conversation.startSession({signedUrl,connectionType:'websocket',onConnect:()=>{ if(attempt===state.voiceAttempt) setVoiceState('listening','Listening'); },onDisconnect:()=>{ if(attempt!==state.voiceAttempt) return; activeSession=null; state.voice=null; setVoiceState('off','Voice is off'); byId('voice-toggle').disabled=false; byId('voice-toggle').textContent='Talk to Hena'; },onModeChange:mode=>{
+          if(attempt!==state.voiceAttempt) return;
+          const speaking=mode.mode==='speaking';
+          muteWhileSpeaking=speaking;
+          activeSession?.setMicMuted(muteWhileSpeaking);
+          setVoiceState(speaking?'speaking':'listening',speaking?'Hena is speaking':'Listening');
+          if(!speaking && state.pendingVoiceResult) { byId('voice-result').textContent=state.pendingVoiceResult; state.pendingVoiceResult=''; }
+        },onMessage:message=>{ if(attempt===state.voiceAttempt) appendTranscript(message.source,message.message); },onError:()=>{ if(attempt===state.voiceAttempt) byId('voice-error').textContent='Voice connection ended. You can type your question.'; }});
+        if(attempt!==state.voiceAttempt) { await session.endSession(); return; }
+        activeSession=session;
+        session.setMicMuted(muteWhileSpeaking);
+        state.voice=session;
+        byId('voice-toggle').disabled=false; byId('voice-toggle').textContent='Stop voice conversation';
+      } catch(error) { if(attempt!==state.voiceAttempt) return; setVoiceState('off','Voice is off'); byId('voice-toggle').disabled=false; byId('voice-toggle').textContent='Talk to Hena'; byId('voice-error').textContent=error?.message?.includes('permission')?'Microphone access is off. You can type your question instead.':'Voice is unavailable right now. You can type your question.'; }
+    }
+    async function stopVoice() { state.voiceAttempt++; state.pendingVoiceResult=''; if(state.voice) { const current=state.voice; state.voice=null; try { await current.endSession(); } catch {} } setVoiceState('off','Voice is off'); byId('voice-toggle').disabled=false; byId('voice-toggle').textContent='Talk to Hena'; }
+    window.addEventListener('pagehide',()=>{ state.voiceAttempt++; if(state.voice) state.voice.endSession().catch(()=>{}); state.voice=null; });
+    const contentReady=load();
+  </script>
+</body>
+</html>

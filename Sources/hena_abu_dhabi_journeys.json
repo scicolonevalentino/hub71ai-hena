@@ -1,0 +1,419 @@
+{
+  "version": 2,
+  "verified_at": "2026-10-02",
+  "disclaimer": "Hena is an independent guide. It is not a government service and cannot complete applications or provide physical navigation.",
+  "journeys": [
+    {
+      "id": "arrival_transport",
+      "title": "Arrival and transport",
+      "handoff": {
+        "provider": "Abu Dhabi Taxi",
+        "scope": "Abu Dhabi Mobility's taxi call centre can take a booking and discuss the pickup point. Confirm any assistance you need with the operator; booking does not guarantee help navigating to the vehicle.",
+        "phone_display": "600 53 53 53",
+        "phone_uri": "tel:600535353",
+        "contact_url": "https://admobility.gov.ae/en/taxi-booking",
+        "contact_label": "Open Abu Dhabi Mobility taxi booking",
+        "question": "I cannot rely on sight to find a taxi. Can you book my ride, describe the exact pickup point, and tell me how to identify the vehicle?"
+      },
+      "steps": [
+        {
+          "id": "book_taxi",
+          "instruction": "For your first ride, call Abu Dhabi Taxi on 600 53 53 53 or use the Abu Dhabi Taxi app listed by Abu Dhabi Mobility.",
+          "access_perspective": "A phone booking lets you describe your pickup point and ask the operator about the assistance you need without relying on a map; confirm the vehicle and pickup arrangement.",
+          "source": {
+            "title": "Abu Dhabi Mobility — Taxi",
+            "url": "https://admobility.gov.ae/en/taxi-booking"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Confirm the pickup point and any assistance you need when booking. The published channels do not establish that a particular vehicle, driver, or app interaction meets your individual access needs."
+        },
+        {
+          "id": "confirm_pickup",
+          "instruction": "Give the taxi operator your exact pickup location and destination, and ask where to meet the vehicle.",
+          "access_perspective": "Ask the operator to describe a precise meeting point and how to identify the taxi, so finding it does not depend on spotting a vehicle visually; confirm what help is available.",
+          "source": {
+            "title": "Abu Dhabi Mobility — Taxi",
+            "url": "https://admobility.gov.ae/en/taxi-booking"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The official page lists booking channels but does not promise help finding the vehicle or navigating to the pickup point."
+        }
+      ]
+    },
+    {
+      "id": "documents_residency",
+      "title": "Documents and residency",
+      "handoff": {
+        "provider": "Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)",
+        "scope": "Ask your employer's HR or visa contact first for your application category, submission and status. ICP can explain official residency requirements and contact channels.",
+        "phone_display": "600 522222",
+        "phone_uri": "tel:600522222",
+        "contact_url": "https://icp.gov.ae/en/contact-us/",
+        "contact_label": "Open ICP contact options",
+        "question": "I cannot rely on sight to review residency forms. Which ICP requirements apply to the category my employer confirmed, and how can I review them in a format I can use?"
+      },
+      "steps": [
+        {
+          "id": "ask_employer_status",
+          "instruction": "If your employer is handling your visa, ask its HR or visa contact which residency category applies, who is submitting the application, and what information they need from you.",
+          "access_perspective": "Ask HR to explain your residency category, who will submit the application, and what they need from you, so you do not have to infer the process from a visual form or checklist.",
+          "source": {
+            "title": "ICP — Issuing Residency Permit",
+            "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "ICP lists different conditions and documents by category. Do not treat this as a universal checklist or submit a second application without confirming the employer's process."
+        },
+        {
+          "id": "check_icp_category",
+          "instruction": "Open the ICP residency service page, select the category confirmed by your employer, and review its current conditions, required documents, and application channel.",
+          "access_perspective": "Use the category confirmed by your employer to narrow the ICP requirements; ask HR or ICP to explain any document or form you cannot access independently.",
+          "source": {
+            "title": "ICP — Issuing Residency Permit",
+            "url": "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The service links residency issuance to an Emirates ID application. Requirements, fees, and who submits the application depend on the category and employment arrangement; confirm your case with the employer and ICP."
+        }
+      ]
+    },
+    {
+      "id": "housing",
+      "title": "Finding a home",
+      "handoff": {
+        "provider": "Abu Dhabi Residents Office / TAMM",
+        "scope": "The Abu Dhabi government contact centre can provide official living and service guidance. Ask your employer about any housing allowance, and ask your landlord or property manager to explain your contract and Tawtheeq registration.",
+        "phone_display": "800 555",
+        "phone_uri": "tel:800555",
+        "contact_url": "https://adro.gov.ae/en/Contact-Us",
+        "contact_label": "Open Abu Dhabi Residents Office contact options",
+        "question": "I cannot rely on photos to assess a home. Where can I get official guidance on Tawtheeq registration and reviewing my tenancy contract in a format I can use?"
+      },
+      "steps": [
+        {
+          "id": "check_housing_support",
+          "instruction": "Ask your employer whether your job includes housing or a housing allowance, then use the Abu Dhabi Residents Office area guide to shortlist places to consider.",
+          "access_perspective": "Ask your employer to explain housing support, then ask about the layout, nearby services and route into any shortlisted home rather than judging suitability from photos alone.",
+          "source": {
+            "title": "Abu Dhabi Residents Office — Where To Live",
+            "url": "https://www.adro.gov.ae/Living-in-Abu-Dhabi/Where-To-Live"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Employer housing support varies. The area guide does not verify a particular home's availability, price, or suitability for your access needs; check these directly before committing."
+        },
+        {
+          "id": "prepare_lease",
+          "instruction": "Before signing a lease, check the current residency and identity documents needed, and ask the landlord how the contract will be registered in Tawtheeq.",
+          "access_perspective": "Ask the landlord to explain the lease and Tawtheeq registration in an accessible format, and confirm how you can review and sign the contract independently.",
+          "source": {
+            "title": "Abu Dhabi Residents Office — Where To Live",
+            "url": "https://www.adro.gov.ae/Living-in-Abu-Dhabi/Where-To-Live"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The guide says lease execution requires a valid residence visa plus passport and Emirates ID copies, and that landlords register contracts in Tawtheeq. Confirm current details for your situation with the landlord and relevant authority."
+        }
+      ]
+    },
+    {
+      "id": "first_outing",
+      "title": "First outing and leisure",
+      "handoff": {
+        "provider": "Experience Abu Dhabi Concierge",
+        "scope": "Abu Dhabi Concierge can guide your choice of places to visit. Confirm current hours, booking, accessibility support and help for your visit with each venue.",
+        "phone_display": "800 5353",
+        "phone_uri": "tel:8005353",
+        "contact_url": "https://visitabudhabi.ae/en/contact-us/",
+        "contact_label": "Open Abu Dhabi Concierge contact options",
+        "question": "I am interested in the experience '{experience}' (official page: {source}). I cannot rely on sight. Who can confirm what I can experience and what support is available?"
+      },
+      "steps": [
+        {
+          "id": "mosque_audio_guide",
+          "experience_label": "Hear the Grand Mosque",
+          "instruction": "Explore the Sheikh Zayed Grand Mosque Centre's multimedia e-guide, which the Centre says includes descriptive language for blind visitors. Check how to book it and ask the Centre about support for your visit.",
+          "access_perspective": "The Centre says its e-guide uses descriptive language for blind visitors, offering a way to learn about the mosque through sound; confirm booking and physical visit support.",
+          "source": {
+            "title": "Sheikh Zayed Grand Mosque Centre — Multimedia E-Guide",
+            "url": "https://www.szgmc.gov.ae/en/worshippers/multimedia-e-guide-detail"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The Centre describes the e-guide but does not guarantee its availability on a particular day or independent physical navigation. Confirm booking, visit requirements, and any support you need directly with the Centre.",
+          "category": "Hear & learn"
+        },
+        {
+          "id": "corniche_waterfront",
+          "experience_label": "Feel the waterfront",
+          "instruction": "Explore the official Abu Dhabi Corniche guide and choose a waterfront stop for your first outing. Confirm your drop-off point and any assistance you need before travelling.",
+          "access_perspective": "Choose one defined waterfront stop and ask for a precise drop-off and route description, since the guide does not establish nonvisual wayfinding there.",
+          "source": {
+            "title": "Experience Abu Dhabi — Abu Dhabi Corniche",
+            "url": "https://visitabudhabi.ae/en/where-to-go/beaches/abu-dhabi-corniche"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The official guide describes pedestrian paths and waterfront facilities, but does not verify tactile guidance, an accessible drop-off, or independent wayfinding at a particular stop. Confirm what you need before going.",
+          "category": "Outside & unwind"
+        },
+        {
+          "id": "mina_markets",
+          "experience_label": "Discover local markets",
+          "instruction": "Read the official Mina Zayed guide and choose a first stop such as Mina Market or Souq Al Mina. Confirm your exact destination and any assistance you need before travelling.",
+          "access_perspective": "Pick one named market or souq and ask for an exact drop-off and help locating stalls, since the guide does not establish nonvisual wayfinding.",
+          "source": {
+            "title": "Experience Abu Dhabi — Mina Zayed",
+            "url": "https://visitabudhabi.ae/en/where-to-go/marinas-waterfronts/mina-zayed"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The guide describes markets and the souq, but does not confirm current vendor offerings or independent wayfinding. Ask the venue or transport provider about the support you need.",
+          "category": "Taste & make"
+        },
+        {
+          "id": "explore_audio",
+          "experience_label": "Explore art by audio",
+          "instruction": "Explore the Louvre Abu Dhabi app's audio content and podcasts before a museum visit, and check the museum's current visit details before choosing a day.",
+          "access_perspective": "The museum offers audio content you can listen to before visiting; ask whether your chosen artwork is described and what help is available inside the museum.",
+          "source": {
+            "title": "Louvre Abu Dhabi — Louvre Abu Dhabi App",
+            "url": "https://www.louvreabudhabi.ae/en/explore/louvre-abu-dhabi-app"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The museum publishes audio content in English and other languages, but does not state here that the app is fully compatible with screen readers or that the audio describes every artwork. Confirm visit details and any assistance you need directly with the museum.",
+          "category": "Hear & learn"
+        },
+        {
+          "id": "bait_al_oud",
+          "experience_label": "Hear the oud",
+          "category": "Hear & learn",
+          "instruction": "Explore Bait Al Oud, a centre for Arabic musical instruments, and contact it to ask about a visitor session or performance.",
+          "access_perspective": "A musical session could be experienced by listening; ask whether one is scheduled and what help is available to reach and join it.",
+          "source": {
+            "title": "Experience Abu Dhabi — Bait Al Oud",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/heritage/bait-al-oud"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The official listing describes the centre but does not confirm a session on your chosen day or blind-specific support. Ask before visiting."
+        },
+        {
+          "id": "voice_guided_city",
+          "experience_label": "Listen to city stories",
+          "category": "Hear & learn",
+          "instruction": "Browse Experience Abu Dhabi’s self-guided audio tours and choose a city story to listen to before you decide whether to go out.",
+          "access_perspective": "Listen to a city story from wherever you are; if you want to follow its route, arrange separate navigation support because the audio tour is not a wayfinding aid.",
+          "source": {
+            "title": "Experience Abu Dhabi — Free Self-Guided Walking Tours",
+            "url": "https://visitabudhabi.ae/en/plan-your-trip/voice-guided-tours"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The audio tour is not a physical navigation aid. The source does not verify VoiceMap screen-reader compatibility or a safe independent walking route."
+        },
+        {
+          "id": "zayed_museum",
+          "experience_label": "Hear the UAE story",
+          "category": "Hear & learn",
+          "instruction": "Read Zayed National Museum’s visitor information and ask about its current guided programmes and services for visitors with visual impairments.",
+          "access_perspective": "Ask the museum which current services for visitors with visual impairments let you follow a guided programme and how to book them.",
+          "source": {
+            "title": "Experience Abu Dhabi — Zayed National Museum",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/museums-and-art/zayed-national-museum"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The official tourism page mentions tailored services for visual needs, but the particular service, booking and visit details should be confirmed with the museum."
+        },
+        {
+          "id": "founders_memorial",
+          "experience_label": "Meet the founding story",
+          "category": "Hear & learn",
+          "instruction": "Explore the Founder’s Memorial visitor page and ask about a cultural tour of Sheikh Zayed’s story.",
+          "access_perspective": "Ask about a booked cultural tour that can tell Sheikh Zayed’s story aloud, and confirm whether the guide can support a visitor with visual impairment.",
+          "source": {
+            "title": "Experience Abu Dhabi — The Founder’s Memorial",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/heritage/the-founders-memorial"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Cultural tours require advance booking. The page does not establish an audio-described tour or independent wayfinding."
+        },
+        {
+          "id": "qasr_al_watan",
+          "experience_label": "Explore the palace story",
+          "category": "Hear & learn",
+          "instruction": "Read the official Qasr Al Watan guide and contact the palace about a visit focused on UAE history and knowledge.",
+          "access_perspective": "Ask whether the palace can explain exhibits and spaces aloud and support your route through the visit; the guide does not confirm either service.",
+          "source": {
+            "title": "Experience Abu Dhabi — Qasr Al Watan",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/landmarks-and-architecture/qasr-al-watan"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Admission, visit details and assistance can change. The page does not guarantee an audio-described or independently navigable visit."
+        },
+        {
+          "id": "bait_al_gahwa",
+          "experience_label": "Experience Arabic coffee",
+          "category": "Taste & make",
+          "instruction": "Explore Bait Al Gahwa’s coffee-making experience at Al Hosn, then check the current demonstration schedule before going.",
+          "access_perspective": "Ask whether a coffee demonstration includes spoken explanation and how you could participate without relying on watching each step.",
+          "source": {
+            "title": "Qasr Al Hosn — Bait Al Gahwa",
+            "url": "https://qasralhosn.ae/en/event/bait-al-gahwa"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Demonstration times and participation may change. Ask the venue what explanation and support it can provide for your visit."
+        },
+        {
+          "id": "house_of_artisans",
+          "experience_label": "Discover Emirati crafts",
+          "category": "Taste & make",
+          "instruction": "Explore the House of Artisans’ traditional crafts and ask about a current demonstration or workshop you could join.",
+          "access_perspective": "Ask whether a craft demonstration can be explained aloud or explored by touch, and whether hands-on participation is permitted.",
+          "source": {
+            "title": "Qasr Al Hosn — House of Artisans",
+            "url": "https://qasralhosn.ae/house-of-artisans"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Craft display and workshop availability vary. Do not assume exhibits may be touched; ask the venue about hands-on access and assistance."
+        },
+        {
+          "id": "try_emirati_food",
+          "experience_label": "Taste Emirati food",
+          "category": "Taste & make",
+          "instruction": "Read the official guide to Emirati food and choose one dish or restaurant you would like to try.",
+          "access_perspective": "Ask the restaurant to describe a dish, its ingredients and the menu aloud, and confirm any help you need to order.",
+          "source": {
+            "title": "Experience Abu Dhabi — Emirati Food and Coffee",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/emirati-culture/food-and-coffee"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Menus, ingredients, prices and assistance vary by restaurant. Confirm dietary needs and current details directly with the venue."
+        },
+        {
+          "id": "manarat_workshop",
+          "experience_label": "Make something at Manarat",
+          "category": "Taste & make",
+          "instruction": "Check Manarat Al Saadiyat’s current Art Studio workshops and ask whether one suits the materials and guidance you need.",
+          "access_perspective": "Ask the studio to explain the workshop materials and steps aloud and whether the activity can be adapted for you before booking.",
+          "source": {
+            "title": "Experience Abu Dhabi — Manarat Al Saadiyat",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/museums-and-art/manarat-al-saadiyat"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Workshops and places change. The guide does not confirm that a particular workshop is adapted for a blind participant."
+        },
+        {
+          "id": "heritage_village",
+          "experience_label": "Explore old Abu Dhabi",
+          "category": "Taste & make",
+          "instruction": "Read the Heritage Village guide and contact the venue about craft demonstrations and the support you need to enjoy them.",
+          "access_perspective": "Ask whether craft demonstrations can be explained aloud or explored by touch and what help is available to move between them.",
+          "source": {
+            "title": "Experience Abu Dhabi — Heritage Village",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/heritage/heritage-village/"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Demonstrations and visitor support vary. The guide does not verify touch access or independent navigation."
+        },
+        {
+          "id": "umm_park",
+          "experience_label": "Unwind in a city park",
+          "category": "Outside & unwind",
+          "instruction": "Explore the Umm Al Emarat Park guide and pick one part of the park to visit, such as the Botanic Garden or Great Lawn.",
+          "access_perspective": "Pick one named area of the park and ask staff for a route description or assistance to reach it, since independent wayfinding is not verified.",
+          "source": {
+            "title": "Experience Abu Dhabi — Umm Al Emarat Park",
+            "url": "https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/parks/umm-al-emarat-park"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Opening details, activities and individual access needs should be confirmed with the park. The guide does not verify independent wayfinding."
+        },
+        {
+          "id": "jubail_mangroves",
+          "experience_label": "Listen to the mangroves",
+          "category": "Outside & unwind",
+          "instruction": "Explore Jubail Mangrove Park’s official guide and contact the park before choosing a boardwalk visit.",
+          "access_perspective": "Ask the park about the boardwalk route and available support before visiting; the guide does not establish tactile guidance or a route you can navigate independently.",
+          "source": {
+            "title": "Experience Abu Dhabi — Jubail Mangrove Park",
+            "url": "https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/parks/jubail-mangrove-park"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The guide describes boardwalks but does not confirm tactile guidance, blind-specific support or suitability of a chosen route."
+        },
+        {
+          "id": "al_wathba_wetlands",
+          "experience_label": "Discover a nature reserve",
+          "category": "Outside & unwind",
+          "instruction": "Read the official Al Wathba Wetland Reserve page and check current visitor access before planning a nature outing.",
+          "access_perspective": "Check whether the reserve is open and ask about a guided route or assistance, since the page does not establish nonvisual navigation.",
+          "source": {
+            "title": "Experience Abu Dhabi — Al Wathba Wetland Reserve",
+            "url": "https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/wildlife/al-wathba-wetland-reserve"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Access may be seasonal or restricted. The guide does not verify safe independent navigation or a guided experience."
+        },
+        {
+          "id": "al_maryah_waterfront",
+          "experience_label": "Find a waterfront pause",
+          "category": "Outside & unwind",
+          "instruction": "Explore the Al Maryah Island guide and choose a café or waterfront stop to get to know the neighbourhood.",
+          "access_perspective": "Choose a specific café or waterfront stop and ask for an exact drop-off and assistance along the promenade if needed.",
+          "source": {
+            "title": "Experience Abu Dhabi — Al Maryah Island",
+            "url": "https://visitabudhabi.ae/en/where-to-go/islands/al-maryah-island"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The page describes promenades and dining but does not verify individual venue access or independent waterfront wayfinding."
+        },
+        {
+          "id": "al_qana_dining",
+          "experience_label": "Try Al Qana by the water",
+          "category": "Outside & unwind",
+          "instruction": "Browse the Al Qana Marina guide and choose a restaurant or café for an easy first evening out.",
+          "access_perspective": "Choose a named café or restaurant and confirm the exact drop-off and how to reach its entrance without relying on visual signs.",
+          "source": {
+            "title": "Experience Abu Dhabi — Al Qana Marina",
+            "url": "https://visitabudhabi.ae/en/where-to-go/marinas-waterfronts/al-qana-marina"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Venue availability, menus and assistance change. Confirm the exact drop-off and support you need before travelling."
+        },
+        {
+          "id": "qasr_al_hosn",
+          "experience_label": "Discover where Abu Dhabi began",
+          "category": "Arts & community",
+          "instruction": "Explore the Qasr Al Hosn guide and choose a museum visit to learn the city’s history.",
+          "access_perspective": "Ask what spoken interpretation is available for the history exhibits and what assistance can help you follow the museum route.",
+          "source": {
+            "title": "Experience Abu Dhabi — Qasr Al Hosn",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/heritage/qasr-al-hosn"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "Exhibition details and support vary. Ask the venue about interpretation and assistance for a blind visitor."
+        },
+        {
+          "id": "cultural_foundation",
+          "experience_label": "Find a performance or talk",
+          "category": "Arts & community",
+          "instruction": "Check Cultural Foundation’s current programme and ask its visitor experience team which performance, talk or class suits your interests.",
+          "access_perspective": "Ask the visitor experience team to describe a talk, performance or class and confirm the support available for that specific event.",
+          "source": {
+            "title": "Experience Abu Dhabi — Cultural Foundation",
+            "url": "https://visitabudhabi.ae/en/things-to-do/culture/museums-and-art/cultural-foundation"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The official guide mentions visitor experience specialists, but does not establish support for a particular event or a blind visitor. Confirm before booking."
+        },
+        {
+          "id": "arts_421",
+          "experience_label": "Meet a creative community",
+          "category": "Arts & community",
+          "instruction": "Check 421 Arts Campus for a current talk, workshop or community event that interests you, then ask about participation support.",
+          "access_perspective": "Ask staff to describe the format of a current event and what spoken guidance or participation support is available before booking.",
+          "source": {
+            "title": "421 Arts Campus — About",
+            "url": "https://www.421.online/about/"
+          },
+          "verified_at": "2026-10-02",
+          "limits": "The campus programme changes. Its general description does not guarantee that a specific session has blind-access support."
+        }
+      ]
+    }
+  ]
+}

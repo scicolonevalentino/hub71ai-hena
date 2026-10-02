@@ -1,0 +1,59 @@
+{
+  "dataset": "Synthetic demonstration data",
+  "window": "Illustrative first 30 days",
+  "note": "These counts are invented to demonstrate an aggregate dashboard. They do not describe real Hena users or government service demand.",
+  "areas": [
+    {
+      "id": "documents_residency",
+      "name": "Documents & residency",
+      "requests": 128,
+      "without_source": 19,
+      "steps_started": 82,
+      "steps_completed": 49,
+      "intents": [
+        { "name": "Employer-led residency", "requests": 52 },
+        { "name": "Permit requirements", "requests": 44 },
+        { "name": "Emirates ID next steps", "requests": 32 }
+      ]
+    },
+    {
+      "id": "housing",
+      "name": "Finding a home",
+      "requests": 105,
+      "without_source": 7,
+      "steps_started": 71,
+      "steps_completed": 50,
+      "intents": [
+        { "name": "Choosing an area", "requests": 47 },
+        { "name": "Lease & Tawtheeq", "requests": 36 },
+        { "name": "Employer housing support", "requests": 22 }
+      ]
+    },
+    {
+      "id": "arrival_transport",
+      "name": "Arrival & transport",
+      "requests": 86,
+      "without_source": 12,
+      "steps_started": 55,
+      "steps_completed": 39,
+      "intents": [
+        { "name": "Booking a taxi", "requests": 42 },
+        { "name": "Finding the pickup point", "requests": 27 },
+        { "name": "Ride assistance", "requests": 17 }
+      ]
+    },
+    {
+      "id": "first_outing",
+      "name": "Things to do",
+      "requests": 65,
+      "without_source": 17,
+      "steps_started": 37,
+      "steps_completed": 15,
+      "intents": [
+        { "name": "Culture & audio experiences", "requests": 30 },
+        { "name": "Outdoor places", "requests": 20 },
+        { "name": "Food & local markets", "requests": 15 }
+      ]
+    }
+  ]
+}

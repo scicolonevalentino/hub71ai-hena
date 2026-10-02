@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b3c">
+  <title>Hena Insights — Abu Dhabi inclusion dashboard concept</title>
+  <meta name="description" content="A synthetic view of first-month questions and missing guidance for blind and low-vision newcomers to Abu Dhabi.">
+  <style>
+    :root { color-scheme:light; --ink:#082b3c; --muted:#365260; --sea:#087e91; --aqua:#54ced0; --coral:#c24b3e; --paper:#f7faf8; --line:#b7c9ca; --focus:#b83b27; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    button { font:inherit; cursor:pointer; }
+    a { color:#075d77; text-underline-offset:.18em; }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
+    .skip { position:absolute; top:-5rem; left:1rem; z-index:10; padding:.7rem 1rem; background:#fff; color:var(--ink); border:2px solid var(--ink); }
+    .skip:focus { top:1rem; }
+    .shell { width:min(100% - 2rem,1200px); margin:auto; }
+    .topline { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:76px; border-bottom:1px solid var(--line); }
+    .brand { font-weight:850; letter-spacing:-.07em; font-size:1.7rem; line-height:1; white-space:nowrap; }
+    .brand span { color:var(--sea); }
+    .brand small { display:block; font-size:.68rem; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-top:.45rem; }
+    .toplink { display:inline-flex; align-items:center; min-height:44px; font-size:.9rem; font-weight:700; }
+    main { padding:2rem 0 3.5rem; }
+    .hero { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:1.3rem 3rem; margin-bottom:1.6rem; }
+    .hero-copy { max-width:770px; }
+    .eyebrow { color:#00677a; text-transform:uppercase; font-size:.76rem; font-weight:850; letter-spacing:.14em; margin:0 0 .55rem; }
+    h1 { font-size:clamp(2.3rem,5vw,4.4rem); line-height:1.04; letter-spacing:-.06em; margin:0 0 .65rem; }
+    .lead { font-size:1.12rem; margin:0; max-width:650px; }
+    .demo-note { background:#e4f4f1; border:1px solid #71aab0; border-radius:1rem; padding:.8rem 1rem; max-width:320px; }
+    .demo-note strong { display:block; font-size:.94rem; }
+    .demo-note p { color:var(--muted); font-size:.84rem; margin:.2rem 0 0; }
+    .section-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.4rem 1rem; margin:2.25rem 0 .9rem; }
+    h2 { font-size:1.5rem; line-height:1.2; letter-spacing:-.035em; margin:0; }
+    h3 { font-size:1.12rem; line-height:1.25; margin:0 0 .4rem; }
+    .section-heading p,.subtle { color:var(--muted); margin:0; font-size:.91rem; }
+    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.8rem; }
+    .metric { background:#fff; border:1px solid var(--line); border-radius:1.1rem; padding:1.15rem 1.2rem; min-height:170px; box-shadow:0 6px 22px rgba(8,43,60,.045); }
+    .metric:nth-child(1) { border-top:5px solid var(--ink); }
+    .metric:nth-child(2) { border-top:5px solid var(--sea); }
+    .metric:nth-child(3) { border-top:5px solid var(--aqua); }
+    .metric:nth-child(4) { border-top:5px solid var(--coral); }
+    .metric-label { display:block; font-weight:750; }
+    .metric-value { display:block; font-size:clamp(2rem,3vw,2.7rem); line-height:1.1; letter-spacing:-.06em; font-weight:850; margin:.45rem 0 .2rem; }
+    .metric p { color:var(--muted); font-size:.84rem; margin:0; }
+    .grid { display:grid; grid-template-columns:1.06fr .94fr; gap:1rem; }
+    .panel { background:#fff; border:1px solid var(--line); border-radius:1.15rem; padding:1.25rem 1.35rem; min-width:0; }
+    .panel > p { color:var(--muted); margin:.1rem 0 1.2rem; font-size:.9rem; }
+    .bars { list-style:none; padding:0; margin:0; display:grid; gap:1.05rem; }
+    .bar-head { display:flex; justify-content:space-between; gap:.7rem; font-weight:700; }
+    .bar-head strong { font-variant-numeric:tabular-nums; }
+    .track { display:block; width:100%; height:.7rem; background:#e6efef; border-radius:99px; overflow:hidden; margin:.45rem 0 .2rem; }
+    .fill { display:block; height:100%; background:var(--sea); border-radius:99px; }
+    .bar-foot { display:block; color:var(--muted); font-size:.82rem; }
+    .signal-list { list-style:none; margin:0; padding:0; }
+    .signal-list li { padding:.85rem 0; border-top:1px solid #d9e5e4; }
+    .signal-list li:first-child { border-top:0; padding-top:0; }
+    .signal-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.25rem 1rem; align-items:baseline; }
+    .signal-top strong { font-size:1rem; }
+    .signal-top span { font-weight:850; font-variant-numeric:tabular-nums; color:var(--coral); }
+    .signal-list small { display:block; color:var(--muted); margin-top:.2rem; font-size:.82rem; }
+    .legend { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; color:var(--muted); font-size:.82rem; margin-top:1.15rem; padding-top:.9rem; border-top:1px solid #d9e5e4; }
+    .intent-panel { margin-top:1rem; }
+    .filters { display:flex; flex-wrap:wrap; gap:.5rem; margin:1.1rem 0 1.35rem; }
+    .filter { min-height:44px; padding:.55rem .9rem; border:1.5px solid #8da9ad; border-radius:99px; background:#fff; color:var(--ink); font-weight:700; }
+    .filter:hover { background:#e9f4f1; }
+    .filter[aria-pressed="true"] { color:#fff; background:var(--ink); border-color:var(--ink); }
+    .intent-grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(240px,.5fr); gap:1.4rem; align-items:start; }
+    .intent-list { list-style:none; margin:0; padding:0; display:grid; gap:.85rem; }
+    .intent-list li { display:grid; grid-template-columns:minmax(0,1fr) 5rem; gap:.3rem 1rem; align-items:center; }
+    .intent-list .track { grid-column:1 / -1; margin:0; }
+    .intent-list strong { justify-self:end; font-variant-numeric:tabular-nums; }
+    .readout { background:#eaf5f2; border-left:4px solid var(--sea); border-radius:0 .7rem .7rem 0; padding:1rem 1.1rem; }
+    .readout p { margin:0; color:var(--muted); font-size:.92rem; }
+    .definitions { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; border-top:1px solid var(--line); margin-top:2rem; padding-top:1.35rem; }
+    .definitions p { font-size:.84rem; color:var(--muted); margin:0; }
+    .definitions strong { display:block; color:var(--ink); font-size:.9rem; margin-bottom:.2rem; }
+    .footer { border-top:1px solid var(--line); color:var(--muted); padding:1.2rem 0 2rem; font-size:.82rem; }
+    .error { background:#fff; border:1px solid var(--coral); border-radius:1rem; padding:1rem; }
+    .loading { background:#e4f4f1; border:1px solid #71aab0; border-radius:1rem; padding:1rem; }
+    @media (max-width:900px) { .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); } .grid { grid-template-columns:1fr; } }
+    @media (max-width:650px) { .shell { width:min(100% - 1.25rem,1200px); } .topline { min-height:68px; } .metrics,.intent-grid,.definitions { grid-template-columns:1fr; } .metric { min-height:0; } .hero { align-items:start; } .demo-note { max-width:none; width:100%; } .panel { padding:1.1rem; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="shell">
+    <header class="topline">
+      <div class="brand" aria-label="Hena Insights">hen<span>a</span>.<small>Inclusion insights / concept</small></div>
+      <a class="toplink" href="/">Open Hena guide</a>
+    </header>
+    <main id="main">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Concept for the Department of Community Development · Abu Dhabi</p>
+          <h1>See what newcomers ask.<br>See where help is missing.</h1>
+          <p class="lead">A demo of questions blind and low-vision newcomers might ask Hena in their first month in Abu Dhabi, which questions Hena cannot answer yet, and which suggested actions are not marked done.</p>
+        </div>
+        <aside class="demo-note" aria-label="Data status"><strong>Synthetic demonstration data</strong><p>Illustrative counts only. No real people, conversations, or government records are represented.</p></aside>
+      </div>
+
+      <p class="loading" id="load-status" role="status">Loading demo insights…</p>
+      <div id="dashboard" hidden>
+        <section aria-labelledby="overview-title">
+          <div class="section-heading"><h2 id="overview-title">At a glance</h2><p>Illustrative first 30 days · aggregate events</p></div>
+          <div class="metrics" id="metrics"></div>
+        </section>
+
+        <section aria-labelledby="patterns-title">
+          <div class="section-heading"><h2 id="patterns-title">Questions and actions by topic</h2><p>All counts are simulated</p></div>
+          <div class="grid">
+            <div class="panel"><h3>What questions are about</h3><p>Share of all simulated questions.</p><ol class="bars" id="area-bars"></ol></div>
+            <div class="panel"><h3>What might need follow-up?</h3><p>For each topic: questions Hena cannot answer from its reviewed sources, and suggested actions not marked done. Neither number proves an accessibility failure.</p><ul class="signal-list" id="signals"></ul><div class="legend">Cannot answer yet: no matching reviewed official source in Hena · Not marked done: a suggested action was selected but not marked complete</div></div>
+          </div>
+        </section>
+
+        <section class="panel intent-panel" aria-labelledby="intent-title">
+          <h2 id="intent-title">What are people asking about?</h2>
+          <p>Choose a topic to see simulated question categories. No question text is stored here.</p>
+          <div class="filters" id="filters" aria-label="Filter question categories by topic"></div>
+          <div class="intent-grid">
+            <ol class="intent-list" id="intents" aria-label="Question category counts"></ol>
+            <aside class="readout" aria-live="polite"><h3 id="readout-title">All areas</h3><p id="readout-text"></p></aside>
+          </div>
+        </section>
+
+        <section class="definitions" aria-label="Metric definitions and privacy">
+          <p><strong>Simulated questions</strong>Illustrative question events grouped by topic and category. They are not unique people.</p>
+          <p><strong>Questions Hena cannot answer yet</strong>No reviewed source in Hena matches the simulated question. An official answer may still exist elsewhere.</p>
+          <p><strong>Actions not marked done</strong>A simulated suggested action was selected but not marked complete. This does not prove anyone struggled. The current Hena guide saves progress only on the visitor's device.</p>
+        </section>
+      </div>
+      <p class="error" id="load-error" role="alert" hidden>Dashboard data could not be loaded. Please reload the page.</p>
+    </main>
+    <footer class="footer">Hena is an independent guide, not an Abu Dhabi government service. This dashboard is a synthetic product demonstration.</footer>
+  </div>
+  <script type="module">
+    const $ = id => document.getElementById(id);
+    const number = value => value.toLocaleString('en-GB');
+    const percent = (part, whole) => whole ? `${Math.round(part / whole * 100)}%` : '0%';
+    const make = (tag, text, className) => { const el = document.createElement(tag); el.textContent = text; if (className) el.className = className; return el; };
+    const sum = (areas, key) => areas.reduce((total, area) => total + area[key], 0);
+
+    function metric(label, value, detail) {
+      const card = make('div', '', 'metric');
+      card.append(make('span', label, 'metric-label'), make('strong', value, 'metric-value'), make('p', detail));
+      return card;
+    }
+
+    function bar(label, count, max, foot) {
+      const item = document.createElement('li');
+      const head = make('div', '', 'bar-head');
+      head.append(make('span', label), make('strong', number(count)));
+      const track = make('span', '', 'track');
+      track.setAttribute('aria-hidden', 'true');
+      const fill = make('span', '', 'fill');
+      fill.style.width = percent(count, max);
+      track.append(fill);
+      item.append(head, track, make('small', foot, 'bar-foot'));
+      return item;
+    }
+
+    function showIntents(areas, selected) {
+      const area = areas.find(item => item.id === selected);
+      const entries = (area ? area.intents.map(intent => ({...intent, area:area.name})) : areas.flatMap(item => item.intents.map(intent => ({...intent, area:item.name})))).sort((a,b) => b.requests - a.requests);
+      const list = $('intents');
+      list.replaceChildren();
+      const max = entries[0]?.requests || 1;
+      for (const intent of entries) {
+        const item = document.createElement('li');
+        item.append(make('span', area ? intent.name : `${intent.name} · ${intent.area}`), make('strong', number(intent.requests)));
+        const track = make('span', '', 'track');
+        track.setAttribute('aria-hidden', 'true');
+        const fill = make('span', '', 'fill');
+        fill.style.width = percent(intent.requests, max);
+        track.append(fill);
+        item.append(track);
+        list.append(item);
+      }
+      $('readout-title').textContent = area ? area.name : 'All areas';
+      $('readout-text').textContent = area
+        ? `${number(area.requests)} simulated questions. Hena could not answer ${number(area.without_source)} from its reviewed sources (${percent(area.without_source, area.requests)}). ${number(area.steps_started - area.steps_completed)} of ${number(area.steps_started)} suggested actions were not marked done (${percent(area.steps_started - area.steps_completed, area.steps_started)}).`
+        : `${number(sum(areas, 'requests'))} simulated questions across four first-month topics. Select a topic to see which questions Hena could not answer and which actions were not marked done.`;
+      for (const button of $('filters').querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.area === selected));
+    }
+
+    function render(data) {
+      const areas = data.areas;
+      const requests = sum(areas, 'requests');
+      const noSource = sum(areas, 'without_source');
+      const started = sum(areas, 'steps_started');
+      const unfinished = started - sum(areas, 'steps_completed');
+      $('metrics').append(
+        metric('Simulated questions', number(requests), 'Question events, not people'),
+        metric('Most asked topic', number(Math.max(...areas.map(a => a.requests))), `${areas.reduce((a,b) => a.requests > b.requests ? a : b).name} · ${percent(Math.max(...areas.map(a => a.requests)), requests)} of questions`),
+        metric('Questions Hena cannot answer yet', number(noSource), `${percent(noSource, requests)} of simulated questions`),
+        metric('Actions not marked done', number(unfinished), `${percent(unfinished, started)} of ${number(started)} simulated action selections`)
+      );
+      for (const area of [...areas].sort((a,b) => b.requests - a.requests)) {
+        $('area-bars').append(bar(area.name, area.requests, requests, `${percent(area.requests, requests)} of all questions`));
+        const item = document.createElement('li');
+        const top = make('div', '', 'signal-top');
+        top.append(make('strong', area.name), make('span', `${number(area.without_source)} questions Hena cannot answer`));
+        item.append(top, make('small', `${percent(area.without_source, area.requests)} of ${number(area.requests)} questions · ${number(area.steps_started - area.steps_completed)} of ${number(area.steps_started)} suggested actions not marked done (${percent(area.steps_started - area.steps_completed, area.steps_started)})`));
+        $('signals').append(item);
+      }
+      for (const entry of [{id:'all', name:'All areas'}, ...areas]) {
+        const button = make('button', entry.name, 'filter');
+        button.type = 'button';
+        button.dataset.area = entry.id;
+        button.addEventListener('click', () => showIntents(areas, entry.id));
+        $('filters').append(button);
+      }
+      showIntents(areas, 'all');
+      $('load-status').hidden = true;
+      $('dashboard').hidden = false;
+    }
+
+    try {
+      const response = await fetch('/api/government');
+      if (!response.ok) throw new Error('Dashboard unavailable');
+      render(await response.json());
+    } catch (error) {
+      $('load-status').hidden = true;
+      $('load-error').hidden = false;
+      console.error(error);
+    }
+  </script>
+</body>
+</html>
